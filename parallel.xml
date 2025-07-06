@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite thread-count="2" parallel="tests" name="Suite">
+  <test thread-count="2" parallel="tests" name="Test">
+    <classes>
+      <class name="com.crm.vtiger.products.CreateAProductTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test thread-count="2" parallel="tests" name="Test2">
+    <classes>
+
+      <class name="com.crm.vtiger.Org.CreateAOrg"/>
+    </classes>
+  </test>
+</suite> <!-- Suite -->
