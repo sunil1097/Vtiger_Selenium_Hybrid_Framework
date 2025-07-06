@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -54,22 +55,30 @@ public class FileUtility {
 	}
 	
 	// Opportunities 
-	public String getDataFromOppotunity(String sheetName,int rowNum,int cellNum,) throws EncryptedDocumentException, IOException {
+	public String[][] getDataFromOppotunity(String sheetName,int rowNum,int cellNum) throws EncryptedDocumentException, IOException {
 		try(FileInputStream fis5 = new FileInputStream("path of file");
 		Workbook wb = WorkbookFactory.create(fis5)){
 		Sheet sh = wb.getSheet(sheetName);
+		int totalRows = sh.getLastRowNum();
+		System.out.println(totalRows);
+		Row rowCells = sh.getRow(0);
+		int totalCols = rowCells.getLastCellNum();
+		System.out.println(totalCols);
 		
-		for(int i=0;i<=sh.getLastRowNum();i++) {
-			
-			Row row = sh.getRow(i);
-			
-			String first1 = row.getCell(0).getStringCellValue();
-			String second1 = row.getCell(1).getStringCellValue();
-			
+		DataFormatter format = new DataFormatter();
+		String testData[][] = new String[totalRows][totalCols];
+		for (int i =1; i<=totalRows;i++) {
+			for(int j=0;j<totalCols;j++) {
+				testData[i-1][j] = format.formatCellValue(sh.getRow(i).getCell(j));
+				System.out.println(testData);
+			}
 		}
+		return testData;
+		}
+				
 		
-		}
-		return first + "|" + second;
+		
+		
 		
 	}
 	// documents 
