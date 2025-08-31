@@ -15,6 +15,8 @@ import Object.repos.VerifyProductPage;
 @Listeners(listner_utility.List_imp.class)
 public class CreateAProductTest extends BaseClass{
 	String createdAProductName;
+	String productName;
+	String updatedProductName;
 	ProductPage pp;
 	VerifyProductPage vp;
 	@Test(priority =1)
@@ -28,8 +30,7 @@ public class CreateAProductTest extends BaseClass{
 		hp.navigateToProduct();
 		// click + for creating a product
 	    pp = new ProductPage(driver);
-		pp.navigateToCreateProductbtn();
-
+	    pp.createProduct(product);
 		//enter the product name 
 		createdAProductName = product + JavaUtility.getRandomNumber();
 		pp.createProduct(createdAProductName);
@@ -48,9 +49,9 @@ public class CreateAProductTest extends BaseClass{
 	public void editExistingProductTest() {
 		hp.navigateToProduct();
 		pp = new ProductPage(driver);
-		pp.editTheSelectProductName(createdAProductName);
 		String updatedProductName = "sunil" + JavaUtility.getRandomNumber();
-		pp.editTheDetailsOfProductPage(updatedProductName);
+		pp.editTheSelectProductName(createdAProductName, updatedProductName);
+		
 		Reporter.log("successfully edited ", true);
 		// so now delete method can access and delete 
 		 createdAProductName = updatedProductName;

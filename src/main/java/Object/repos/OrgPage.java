@@ -119,7 +119,7 @@ public class OrgPage {
 		util.selectByVisibleText(orgDropDown, "Organization Name");
 		getClickOnSearchBtn().click();
 		getDelLink().click();
-		util.handleAlertAccept();
+		util.acceptAlert();
 
 	}
 

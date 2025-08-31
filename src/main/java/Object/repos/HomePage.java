@@ -27,11 +27,7 @@ public class HomePage {
 	// navigate to product page 
 	 @FindBy(linkText="Products")
 	 private WebElement clickOnProducts;
-	 
-	 public WebElement getProductPage() {
-		 return clickOnProducts;
-	 }
-	 
+
 	 @FindBy(xpath ="//img[@src='themes/softed/images/user.PNG']")
 	 private WebElement hoverOverProfile;
 	 

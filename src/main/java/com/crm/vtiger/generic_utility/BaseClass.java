@@ -30,34 +30,9 @@ public class BaseClass {
 	public FileUtility fUtil = new FileUtility();
 	public static WebDriver sdriver= null; 
 	
-	public static ExtentSparkReporter sparkReporter;
-	public static ExtentReports extentReport; // Renamed to avoid conflict with local 'report'
-	public static ExtentTest test; // ExtentTest for the current test method
+
 	
-	@BeforeSuite
-	public void setUpReport() {
-		// specify the file path 
-		ExtentSparkReporter spark = new ExtentSparkReporter("C:\\Users\\dell\\eclipse-workspace\\Vtiger_Project\\test-output\\ExtentReports\\file.html");
-		
-		spark.config().setDocumentTitle("Vtiger Test Report");
-		spark.config().setReportName("Login Fuctionality ");
-		spark.config().setTheme(Theme.DARK);
-		
-		ExtentReports report = new ExtentReports();
-		report.attachReporter(spark);
-		
-		// add system info and env info to the report 
-		report.setSystemInfo("Browser","Chrome");
-		report.setSystemInfo("Browser-Version", "v137");
-		report.setSystemInfo("Linux","Linux-Mint");
-		report.setSystemInfo("Tester", "Sunil Samal");
-		
-		ExtentTest test = report.createTest("name nahi aaya kuch");
-		test.log(Status.INFO,"Information ");
-		test.log(Status.FAIL, "Failed");
-		test.log(Status.PASS,"Passed");
-		test.log(Status.FAIL, "Failing");
-	}
+	
 	@BeforeClass(alwaysRun =true) 
 	public void browserLaunch() throws IOException {
 		//getting the data from prop file 

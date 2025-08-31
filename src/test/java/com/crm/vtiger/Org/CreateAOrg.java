@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.crm.vtiger.generic_utility.BaseClass;
 import com.crm.vtiger.generic_utility.FileUtility;
@@ -15,6 +16,7 @@ import Object.repos.VerifyOrgPage;
 
 
 
+@Listeners(listner_utility.List_imp.class)
 public class CreateAOrg extends BaseClass {
 	OrgPage op;
 	String createdAOrgName;
