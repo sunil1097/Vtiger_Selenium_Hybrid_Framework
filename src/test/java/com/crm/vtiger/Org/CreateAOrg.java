@@ -17,9 +17,7 @@ import Object.repos.VerifyOrgPage;
 @Listeners(listner_utility.List_imp.class)
 public class CreateAOrg extends BaseClass {
 	String createdOrgName;
-	String OrgName;
 	OrgPage op;
-	String createdAOrgName;
 	VerifyOrgPage vOP;
 
 	@Test(priority = 1)

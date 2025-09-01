@@ -69,8 +69,8 @@ public class OrgPage {
 	}
 
 	// BUSINESS Action :2 Edit existing Organization
-	public void editExistOrg(String createdOrgName, String updatedOrgName) {
-		txtSearchOrg.sendKeys(createdOrgName);
+	public void editExistOrg(String OrgName, String updatedOrgName) {
+		txtSearchOrg.sendKeys(OrgName);
 		util = new WebDriverUtility(driver);
 		util.selectByVisibleText(ddOrgName, "Organization Name");
 		btnSearchNow.click();
