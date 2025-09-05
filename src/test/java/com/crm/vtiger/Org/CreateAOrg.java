@@ -7,14 +7,13 @@ import org.testng.Reporter;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.crm.vtiger.generic_utility.BaseClass;
-import com.crm.vtiger.generic_utility.FileUtility;
-import com.crm.vtiger.generic_utility.JavaUtility;
+import com.crm.vtiger.pages.OrgPage;
+import com.crm.vtiger.pages.VerifyOrgPage;
+import com.crm.vtiger.utility.BaseClass;
+import com.crm.vtiger.utility.FileUtility;
+import com.crm.vtiger.utility.JavaUtility;
 
-import PageObjects.OrgPage;
-import PageObjects.VerifyOrgPage;
-
-@Listeners(listner_utility.List_imp.class)
+@Listeners(com.crm.vtiger.listeners.List_imp.class)
 public class CreateAOrg extends BaseClass {
 	String createdOrgName;
 	OrgPage op;

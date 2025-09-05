@@ -1,6 +1,6 @@
 package com.crm.vtiger.contacts;
 
-import com.crm.vtiger.generic_utility.BaseClass;
+import com.crm.vtiger.utility.BaseClass;
 
 public class CreateAContactsTest extends BaseClass {
 	

@@ -1,4 +1,4 @@
-	package listner_utility;
+	package com.crm.vtiger.listeners;
 	
 	import java.io.File;
 	import java.io.IOException;
@@ -11,9 +11,9 @@
 	import org.testng.ITestListener;
 	import org.testng.ITestResult;
 	import org.testng.Reporter;
-	
-	import com.crm.vtiger.generic_utility.BaseClass;
-	import com.crm.vtiger.generic_utility.JavaUtility;
+
+import com.crm.vtiger.utility.BaseClass;
+import com.crm.vtiger.utility.JavaUtility;
 	
 	public class List_imp implements ISuiteListener, ITestListener {
 		public JavaUtility jUtil;

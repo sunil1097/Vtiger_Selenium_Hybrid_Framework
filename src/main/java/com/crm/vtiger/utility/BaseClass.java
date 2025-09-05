@@ -1,4 +1,4 @@
-package com.crm.vtiger.generic_utility;
+package com.crm.vtiger.utility;
 
 import java.io.IOException;
 
@@ -18,9 +18,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-
-import PageObjects.HomePage;
-import PageObjects.LoginPage;
+import com.crm.vtiger.pages.HomePage;
+import com.crm.vtiger.pages.LoginPage;
 
 public class BaseClass {
 

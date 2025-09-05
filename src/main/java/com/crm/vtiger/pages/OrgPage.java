@@ -1,11 +1,11 @@
-package PageObjects;
+package com.crm.vtiger.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.crm.vtiger.generic_utility.WebDriverUtility;
+import com.crm.vtiger.utility.WebDriverUtility;
 
 public class OrgPage {
 	WebDriver driver;

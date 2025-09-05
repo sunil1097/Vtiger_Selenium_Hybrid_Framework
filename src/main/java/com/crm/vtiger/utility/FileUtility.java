@@ -1,4 +1,4 @@
-package com.crm.vtiger.generic_utility;
+package com.crm.vtiger.utility;
 
 import java.io.FileInputStream;
 import java.io.IOException;
