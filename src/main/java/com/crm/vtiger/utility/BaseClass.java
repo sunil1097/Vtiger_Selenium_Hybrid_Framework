@@ -1,80 +1,80 @@
 package com.crm.vtiger.utility;
 
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.crm.vtiger.pages.HomePage;
 import com.crm.vtiger.pages.LoginPage;
 
 public class BaseClass {
 
 	public WebDriver driver;
-	public HomePage hp;	
+	public HomePage hp;
 	public WebDriverUtility wdUtil;
 	public FileUtility fUtil = new FileUtility();
-	public static WebDriver sdriver= null; 
-	
+	public static WebDriver sdriver = null;
 
-	
-	
-	@BeforeClass(alwaysRun =true) 
-	public void browserLaunch() throws IOException {
-		//getting the data from prop file 
-		String BROWSER =fUtil.getDataFromPropFile("bro");
-		// cross browser set up 
-		
-		if(BROWSER.equalsIgnoreCase("chrome")) {
+	@BeforeClass(groups = { "Sanity", "Regression", "Master", "DataDriven" })
+	public void setUp() throws IOException {
+		// getting the data from prop file
+		String BROWSER = fUtil.getDataFromPropFile("bro");
+		// cross browser set up
+
+		if (BROWSER.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
-		}else if (BROWSER.equalsIgnoreCase("firefox")) {
+		} else if (BROWSER.equalsIgnoreCase("firefox")) {
 			driver = new FirefoxDriver();
-		}else {
+		} else {
 			driver = new ChromeDriver();
 		}
-		sdriver= driver;
+		sdriver = driver;
 		wdUtil = new WebDriverUtility(driver);
 		wdUtil.maxWindow();
-		wdUtil.implicitWait();	
+		wdUtil.implicitWait();
 	}
+
 	@BeforeMethod
 	public void login() throws IOException {
 		String URL = fUtil.getDataFromPropFile("url");
 		driver.get(URL);
 		LoginPage lp = new LoginPage(driver);
 		lp.loginToApp();
-		hp= new HomePage(driver, wdUtil);
+		hp = new HomePage(driver, wdUtil);
 	}
-			
-	// log out from the crm 
-	@AfterMethod(alwaysRun =true)
+
+	// log out from the crm
+	@AfterMethod(alwaysRun = true)
 	public void logOutFromVtiger() {
 		hp.logOut();
 	}
-	@AfterClass
-	public void browserClosed() {
+
+	@AfterClass(groups = { "Sanity", "Regression", "Master", "DataDriven" })
+	public void tearDown() {
 		driver.quit();
 	}
-	@AfterTest
-	public void postCondition() {
-		System.out.println("post conditions");
-	}
-	@AfterSuite
-	public void dbclose() {
-		System.out.println("DB close + report backup ");
-	
+
+	public String captureScreen(String tname) {
+		String timeStamp = new SimpleDateFormat("yyyyMMddhhss").format(new Date());
+
+		TakesScreenshot tks = (TakesScreenshot) driver;
+		File sourceFile = tks.getScreenshotAs(OutputType.FILE);
+
+		String targetFilePath = System.getProperty("user.dir") + "\\screenshots\\" + tname + "_" + timeStamp + ".png";
+		File targetFile = new File(targetFilePath);
+
+		sourceFile.renameTo(targetFile);
+		return targetFilePath;
 	}
 }
