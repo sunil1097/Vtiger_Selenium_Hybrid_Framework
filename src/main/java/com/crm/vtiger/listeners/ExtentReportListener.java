@@ -15,7 +15,7 @@
 import com.crm.vtiger.utility.BaseClass;
 import com.crm.vtiger.utility.JavaUtility;
 	
-	public class List_imp implements ISuiteListener, ITestListener {
+	public class ExtentReportListener implements ISuiteListener, ITestListener {
 		public JavaUtility jUtil;
 	
 		@Override

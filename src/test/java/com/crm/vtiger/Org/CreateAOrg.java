@@ -13,7 +13,7 @@ import com.crm.vtiger.utility.BaseClass;
 import com.crm.vtiger.utility.FileUtility;
 import com.crm.vtiger.utility.JavaUtility;
 
-@Listeners(com.crm.vtiger.listeners.List_imp.class)
+@Listeners(com.crm.vtiger.listeners.ExtentReportListener.class)
 public class CreateAOrg extends BaseClass {
 	String createdOrgName;
 	OrgPage op;
