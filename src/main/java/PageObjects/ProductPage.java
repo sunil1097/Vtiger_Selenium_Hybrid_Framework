@@ -1,4 +1,4 @@
-package Object.repos;
+package PageObjects;
 
 
 import org.openqa.selenium.WebDriver;

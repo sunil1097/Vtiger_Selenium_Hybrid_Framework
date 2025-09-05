@@ -19,8 +19,8 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import Object.repos.HomePage;
-import Object.repos.LoginPage;
+import PageObjects.HomePage;
+import PageObjects.LoginPage;
 
 public class BaseClass {
 

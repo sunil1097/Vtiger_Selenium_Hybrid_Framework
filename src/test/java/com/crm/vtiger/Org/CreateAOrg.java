@@ -11,8 +11,8 @@ import com.crm.vtiger.generic_utility.BaseClass;
 import com.crm.vtiger.generic_utility.FileUtility;
 import com.crm.vtiger.generic_utility.JavaUtility;
 
-import Object.repos.OrgPage;
-import Object.repos.VerifyOrgPage;
+import PageObjects.OrgPage;
+import PageObjects.VerifyOrgPage;
 
 @Listeners(listner_utility.List_imp.class)
 public class CreateAOrg extends BaseClass {

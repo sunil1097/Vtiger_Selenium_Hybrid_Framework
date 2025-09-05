@@ -9,8 +9,9 @@ import org.testng.annotations.Test;
 import com.crm.vtiger.generic_utility.BaseClass;
 import com.crm.vtiger.generic_utility.FileUtility;
 import com.crm.vtiger.generic_utility.JavaUtility;
-import Object.repos.ProductPage;
-import Object.repos.VerifyProductPage;
+
+import PageObjects.ProductPage;
+import PageObjects.VerifyProductPage;
 
 @Listeners(listner_utility.List_imp.class)
 public class CreateAProductTest extends BaseClass{
