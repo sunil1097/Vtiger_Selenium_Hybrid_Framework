@@ -3,19 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.vtiger.Org.CreateAOrg">
+      <class name="com.crm.vtiger.products.CreateAProductTest">
         <methods>
-          <include name="deleteTheExistitngOrg"/>
           <include name="login"/>
-          <include name="logOutFromVtiger"/>
-          <include name="dbclose"/>
+          <include name="tearDown"/>
+          <include name="editExistingProductTest"/>
           <include name="createProductTest"/>
-          <include name="editTheExistingOrg"/>
-          <include name="postCondition"/>
-          <include name="browserLaunch"/>
-          <include name="browserClosed"/>
+          <include name="deleteExistingProductTest"/>
+          <include name="logOutFromVtiger"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.crm.vtiger.Org.CreateAOrg -->
+      </class> <!-- com.crm.vtiger.products.CreateAProductTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

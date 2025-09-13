@@ -2,7 +2,7 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[successfully created a product ]]>
+      <![CDATA[Successfully Org is created ]]>
     </line>
     <line>
       <![CDATA[successfully edited ]]>
@@ -11,65 +11,65 @@
       <![CDATA[successfully deleted a product]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-09-14T00:42:10 IST" name="Default suite" finished-at="2025-09-14T00:43:33 IST" duration-ms="83139">
+  <suite started-at="2025-09-14T01:12:24 IST" name="Default suite" finished-at="2025-09-14T01:13:06 IST" duration-ms="41852">
     <groups>
     </groups>
-    <test started-at="2025-09-14T00:42:10 IST" name="Default test" finished-at="2025-09-14T00:43:33 IST" duration-ms="83139">
-      <class name="com.crm.vtiger.products.CreateAProductTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:42:10 IST" name="setUp" finished-at="2025-09-14T00:42:38 IST" duration-ms="27854" status="PASS">
+    <test started-at="2025-09-14T01:12:24 IST" name="Default test" finished-at="2025-09-14T01:13:06 IST" duration-ms="41852">
+      <class name="com.crm.vtiger.Org.CreateAOrg">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:12:24 IST" name="setUp" finished-at="2025-09-14T01:12:26 IST" duration-ms="1297" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:42:38 IST" name="login" finished-at="2025-09-14T00:42:50 IST" duration-ms="12014" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:12:26 IST" name="login" finished-at="2025-09-14T01:12:36 IST" duration-ms="9926" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createProductTest()[pri:1, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:42:50 IST" name="createProductTest" finished-at="2025-09-14T00:43:12 IST" duration-ms="22276" status="PASS">
+        <test-method signature="createProductTest()[pri:1, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:12:36 IST" name="createProductTest" finished-at="2025-09-14T01:12:49 IST" duration-ms="13275" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[successfully created a product ]]>
+              <![CDATA[Successfully Org is created ]]>
             </line>
           </reporter-output>
         </test-method> <!-- createProductTest -->
-        <test-method is-config="true" signature="logOutFromVtiger()[pri:0, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:43:12 IST" name="logOutFromVtiger" finished-at="2025-09-14T00:43:14 IST" duration-ms="2044" status="PASS">
+        <test-method is-config="true" signature="logOutFromVtiger()[pri:0, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:12:49 IST" name="logOutFromVtiger" finished-at="2025-09-14T01:12:50 IST" duration-ms="1408" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logOutFromVtiger -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:43:14 IST" name="login" finished-at="2025-09-14T00:43:17 IST" duration-ms="2155" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:12:50 IST" name="login" finished-at="2025-09-14T01:12:52 IST" duration-ms="1882" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="editExistingProductTest()[pri:2, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:43:17 IST" name="editExistingProductTest" finished-at="2025-09-14T00:43:21 IST" depends-on-methods="com.crm.vtiger.products.CreateAProductTest.createProductTest" duration-ms="4867" status="PASS">
+        <test-method signature="editTheExistingOrg()[pri:2, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:12:52 IST" name="editTheExistingOrg" finished-at="2025-09-14T01:12:56 IST" depends-on-methods="com.crm.vtiger.Org.CreateAOrg.createProductTest" duration-ms="3765" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[successfully edited ]]>
             </line>
           </reporter-output>
-        </test-method> <!-- editExistingProductTest -->
-        <test-method is-config="true" signature="logOutFromVtiger()[pri:0, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:43:21 IST" name="logOutFromVtiger" finished-at="2025-09-14T00:43:24 IST" duration-ms="2619" status="PASS">
+        </test-method> <!-- editTheExistingOrg -->
+        <test-method is-config="true" signature="logOutFromVtiger()[pri:0, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:12:56 IST" name="logOutFromVtiger" finished-at="2025-09-14T01:12:57 IST" duration-ms="1164" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logOutFromVtiger -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:43:24 IST" name="login" finished-at="2025-09-14T00:43:26 IST" duration-ms="2013" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:12:57 IST" name="login" finished-at="2025-09-14T01:12:59 IST" duration-ms="1819" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="deleteExistingProductTest()[pri:3, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:43:26 IST" name="deleteExistingProductTest" finished-at="2025-09-14T00:43:30 IST" depends-on-methods="com.crm.vtiger.products.CreateAProductTest.editExistingProductTest" duration-ms="3813" status="PASS">
+        <test-method signature="deleteTheExistitngOrg()[pri:3, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:12:59 IST" name="deleteTheExistitngOrg" finished-at="2025-09-14T01:13:02 IST" depends-on-methods="com.crm.vtiger.Org.CreateAOrg.editTheExistingOrg" duration-ms="3615" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[successfully deleted a product]]>
             </line>
           </reporter-output>
-        </test-method> <!-- deleteExistingProductTest -->
-        <test-method is-config="true" signature="logOutFromVtiger()[pri:0, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:43:30 IST" name="logOutFromVtiger" finished-at="2025-09-14T00:43:33 IST" duration-ms="2728" status="PASS">
+        </test-method> <!-- deleteTheExistitngOrg -->
+        <test-method is-config="true" signature="logOutFromVtiger()[pri:0, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:13:03 IST" name="logOutFromVtiger" finished-at="2025-09-14T01:13:06 IST" duration-ms="3050" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logOutFromVtiger -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.vtiger.products.CreateAProductTest@2f4948e4]" started-at="2025-09-14T00:43:33 IST" name="tearDown" finished-at="2025-09-14T00:43:33 IST" duration-ms="387" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.vtiger.Org.CreateAOrg@2f4948e4]" started-at="2025-09-14T01:13:06 IST" name="tearDown" finished-at="2025-09-14T01:13:06 IST" duration-ms="380" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.crm.vtiger.products.CreateAProductTest -->
+      </class> <!-- com.crm.vtiger.Org.CreateAOrg -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
