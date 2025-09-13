@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite parallel="tests" name="Suite">
+
+<listeners>
+<listener class-name="com.crm.vtiger.listeners.ExtentReportListener"></listener>
+</listeners>
+
+  <test name="firefoxtest">
+  	<parameter name="os" value="Windows"></parameter>
+  	<parameter name="browser" value="firefox"></parameter>
+    <classes>
+      <class name="com.crm.vtiger.products.CreateAProductTest"/>
+      <class name="com.crm.vtiger.Org.CreateAOrg"/>
+    </classes>
+  </test>
+
+ <test name="chrometest">
+  	<parameter name="os" value="Windows"></parameter>
+  	<parameter name="browser" value="firefox"></parameter>
+    <classes>
+      <class name="com.crm.vtiger.products.CreateAProductTest"/>
+      <class name="com.crm.vtiger.Org.CreateAOrg"/>
+    </classes>
+  </test>
+   <test name="edgetest">
+  	<parameter name="os" value="Windows"></parameter>
+  	<parameter name="browser" value="firefox"></parameter>
+    <classes>
+            <class name="com.crm.vtiger.products.CreateAProductTest"/>
+      		<class name="com.crm.vtiger.Org.CreateAOrg"/>
+    </classes>
+  </test>
+</suite> <!-- Suite -->
