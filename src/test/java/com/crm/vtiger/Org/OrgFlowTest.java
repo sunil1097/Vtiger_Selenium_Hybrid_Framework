@@ -14,12 +14,12 @@ import com.crm.vtiger.utility.FileUtility;
 import com.crm.vtiger.utility.JavaUtility;
 
 @Listeners(com.crm.vtiger.listeners.ExtentReportListener.class)
-public class CreateAOrg extends BaseClass {
+public class OrgFlowTest extends BaseClass {
 	String createdOrgName;
 	OrgPage op;
 	VerifyOrgPage vOP;
 
-	@Test(priority = 1)
+	@Test(priority = 1, groups = { "smoke", "org" })
 	public void createProductTest() throws IOException, InterruptedException {
 
 		// getting data from prop by utility file
@@ -40,7 +40,7 @@ public class CreateAOrg extends BaseClass {
 
 	}
 
-	@Test(priority = 2, dependsOnMethods = "createProductTest")
+	@Test(priority = 2, dependsOnMethods = "createProductTest", groups = { "sanity", "functional", "Org" })
 	public void editTheExistingOrg() {
 		hp.navigateToOrg();
 		op = new OrgPage(driver);
@@ -50,7 +50,7 @@ public class CreateAOrg extends BaseClass {
 		createdOrgName = updatedOrgName;
 	}
 
-	@Test(priority = 3, dependsOnMethods = "editTheExistingOrg")
+	@Test(priority = 3, dependsOnMethods = "editTheExistingOrg", groups = { "regression", "org" })
 	public void deleteTheExistitngOrg() {
 		hp.navigateToOrg();
 		op = new OrgPage(driver);

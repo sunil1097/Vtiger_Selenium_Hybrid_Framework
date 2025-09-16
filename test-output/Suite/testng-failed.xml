@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [Suite]">
-  <test thread-count="2" parallel="tests" name="Test(failed)">
+<suite parallel="tests" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.crm.vtiger.listeners.ExtentReportListener"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="firefoxtest(failed)">
+    <parameter name="os" value="Windows"/>
+    <parameter name="browser" value="firefox"/>
     <classes>
       <class name="com.crm.vtiger.products.CreateAProductTest">
         <methods>
-          <include name="productCreate"/>
-          <include name="deleteProduct"/>
           <include name="login"/>
-          <include name="editProduct"/>
+          <include name="tearDown"/>
+          <include name="editExistingProductTest"/>
+          <include name="createProductTest"/>
+          <include name="deleteExistingProductTest"/>
           <include name="logOutFromVtiger"/>
-          <include name="browserLaunch"/>
-          <include name="browserClosed"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- com.crm.vtiger.products.CreateAProductTest -->
-    </classes>
-  </test> <!-- Test(failed) -->
-  <test thread-count="2" parallel="tests" name="Test2(failed)">
-    <classes>
       <class name="com.crm.vtiger.Org.CreateAOrg">
         <methods>
-          <include name="editTheOrg"/>
           <include name="login"/>
+          <include name="deleteTheExistitngOrg"/>
+          <include name="tearDown"/>
+          <include name="editTheExistingOrg"/>
+          <include name="createProductTest"/>
           <include name="logOutFromVtiger"/>
-          <include name="deleteTheOrg"/>
-          <include name="browserLaunch"/>
-          <include name="browserClosed"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- com.crm.vtiger.Org.CreateAOrg -->
     </classes>
-  </test> <!-- Test2(failed) -->
+  </test> <!-- firefoxtest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

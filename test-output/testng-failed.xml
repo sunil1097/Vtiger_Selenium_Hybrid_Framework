@@ -3,17 +3,28 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.vtiger.products.CreateAProductTest">
+      <class name="com.crm.vtiger.products.ProductFlowTest">
         <methods>
           <include name="login"/>
-          <include name="tearDown"/>
           <include name="editExistingProductTest"/>
-          <include name="createProductTest"/>
           <include name="deleteExistingProductTest"/>
+          <include name="tearDown"/>
           <include name="logOutFromVtiger"/>
           <include name="setUp"/>
+          <include name="createProductTest"/>
         </methods>
-      </class> <!-- com.crm.vtiger.products.CreateAProductTest -->
+      </class> <!-- com.crm.vtiger.products.ProductFlowTest -->
+      <class name="com.crm.vtiger.Org.OrgFlowTest">
+        <methods>
+          <include name="login"/>
+          <include name="createProductTest"/>
+          <include name="tearDown"/>
+          <include name="deleteTheExistitngOrg"/>
+          <include name="logOutFromVtiger"/>
+          <include name="editTheExistingOrg"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.crm.vtiger.Org.OrgFlowTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
