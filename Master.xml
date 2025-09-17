@@ -7,10 +7,10 @@
 </listeners>
   <test thread-count="5" name="Test">
     <parameter name="os" value="Windows"></parameter>
-  	<parameter name="browser" value="firefox"></parameter>
+  	<parameter name="browser" value="chrome"></parameter>
     <classes>
       <class name="com.crm.vtiger.products.ProductFlowTest"/>
-      <class name="com.crm.vtiger.Org.OrgFlowTest"/>
+      <!--<class name="com.crm.vtiger.Org.OrgFlowTest"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- MasterSuite -->

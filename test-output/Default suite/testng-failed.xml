@@ -14,17 +14,6 @@
           <include name="createProductTest"/>
         </methods>
       </class> <!-- com.crm.vtiger.products.ProductFlowTest -->
-      <class name="com.crm.vtiger.Org.OrgFlowTest">
-        <methods>
-          <include name="login"/>
-          <include name="createProductTest"/>
-          <include name="tearDown"/>
-          <include name="deleteTheExistitngOrg"/>
-          <include name="logOutFromVtiger"/>
-          <include name="editTheExistingOrg"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.crm.vtiger.Org.OrgFlowTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -29,6 +29,11 @@ public class ProductFlowTest extends BaseClass {
 		// getting data from excel by utility file
 		String product = fUtil.getDataFromExcelFile("Product", 1, 0);
 		// click on Product module
+		if (hp == null) {
+			throw new IllegalStateException("HomePage not initialized. Login might have failed.");
+		}
+		hp.navigateToProduct();
+
 		hp.navigateToProduct();
 		// click + for creating a product
 		pp = new ProductPage(driver);

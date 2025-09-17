@@ -1,5 +1,7 @@
 package com.crm.vtiger.opportunities;
 
-public class OpportunitiesFlowTest {
+import com.crm.vtiger.utility.BaseClass;
+
+public class OpportunitiesFlowTest extends BaseClass {
 
 }

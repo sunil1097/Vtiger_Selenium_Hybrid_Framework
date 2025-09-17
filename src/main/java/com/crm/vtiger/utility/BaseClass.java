@@ -2,6 +2,7 @@ package com.crm.vtiger.utility;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -15,6 +16,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import com.crm.vtiger.pages.HomePage;
@@ -29,14 +31,11 @@ public class BaseClass {
 	public static WebDriver sdriver = null;
 
 	@Parameters({ "browser", "os" })
-	@BeforeClass(groups = { "Sanity", "Regression", "Master", "DataDriven" })
-	public void setUp(String browser, String os) throws IOException {
-		// if browser is not passed in xml , fall back to prop file
+	@BeforeClass(alwaysRun = true) // ✅ Always run, no groups
+	public void setUp(@Optional("") String browser, @Optional("") String os) throws IOException {
 		if (browser == null || browser.isEmpty()) {
 			browser = fUtil.getDataFromPropFile("bro");
 		}
-
-		// cross browser set up
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
@@ -45,15 +44,16 @@ public class BaseClass {
 		} else if (browser.equalsIgnoreCase("edge")) {
 			driver = new EdgeDriver();
 		} else {
-			throw new IllegalArgumentException("browser not supported :" + browser);
+			throw new IllegalArgumentException("Browser not supported: " + browser);
 		}
+
 		sdriver = driver;
 		wdUtil = new WebDriverUtility(driver);
 		wdUtil.maxWindow();
 		wdUtil.implicitWait();
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void login() throws IOException {
 		String URL = fUtil.getDataFromPropFile("url");
 		driver.get(URL);
@@ -62,27 +62,39 @@ public class BaseClass {
 		hp = new HomePage(driver, wdUtil);
 	}
 
-	// log out from the crm
 	@AfterMethod(alwaysRun = true)
 	public void logOutFromVtiger() {
-		hp.logOut();
+		if (hp != null) {
+			hp.logOut();
+		}
 	}
 
-	@AfterClass(groups = { "Sanity", "Regression", "Master", "DataDriven" })
+	@AfterClass(alwaysRun = true) // ✅ Always run, no groups
 	public void tearDown() {
-		driver.quit();
+		if (driver != null) {
+			driver.quit();
+		}
 	}
 
-	public String captureScreen(String tname) {
-		String timeStamp = new SimpleDateFormat("yyyyMMddhhss").format(new Date());
+	public static String captureScreen(String tname) {
+		if (sdriver == null) {
+			System.out.println("⚠ Screenshot skipped: WebDriver is null");
+			return null;
+		}
 
-		TakesScreenshot tks = (TakesScreenshot) driver;
+		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+		TakesScreenshot tks = (TakesScreenshot) sdriver;
 		File sourceFile = tks.getScreenshotAs(OutputType.FILE);
 
-		String targetFilePath = System.getProperty("user.dir") + "\\screenshots\\" + tname + "_" + timeStamp + ".png";
-		File targetFile = new File(targetFilePath);
+		String targetFilePath = System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + tname
+				+ "_" + timeStamp + ".png";
 
-		sourceFile.renameTo(targetFile);
+		File targetFile = new File(targetFilePath);
+		try {
+			Files.copy(sourceFile.toPath(), targetFile.toPath());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return targetFilePath;
 	}
 }
