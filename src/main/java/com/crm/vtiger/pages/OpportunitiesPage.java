@@ -23,6 +23,8 @@ public class OpportunitiesPage {
 
 	// action method
 	public void createOpportunities() {
+		plusIcon.click();
+		inputOpportunityName.sendKeys(null);
 
 	}
 

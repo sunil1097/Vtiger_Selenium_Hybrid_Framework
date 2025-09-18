@@ -27,7 +27,7 @@ public class BaseClass {
 	public WebDriver driver;
 	public HomePage hp;
 	public WebDriverUtility wdUtil;
-	public FileUtility fUtil = new FileUtility();
+	public configUtility fUtil = new configUtility();
 	public static WebDriver sdriver = null;
 
 	@Parameters({ "browser", "os" })

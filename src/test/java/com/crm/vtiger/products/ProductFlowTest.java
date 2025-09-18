@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import com.crm.vtiger.pages.ProductPage;
 import com.crm.vtiger.pages.VerifyProductPage;
 import com.crm.vtiger.utility.BaseClass;
-import com.crm.vtiger.utility.FileUtility;
 import com.crm.vtiger.utility.JavaUtility;
 
 @Listeners(com.crm.vtiger.listeners.ExtentReportListener.class)
@@ -21,33 +20,24 @@ public class ProductFlowTest extends BaseClass {
 	ProductPage pp;
 	VerifyProductPage vp;
 
-	@Test(priority = 1, groups = { "smoke", "product" })
-	public void createProductTest() throws IOException, InterruptedException {
-		// getting data from Prop file by utility file
-		FileUtility fUtil = new FileUtility();
-
-		// getting data from excel by utility file
-		String product = fUtil.getDataFromExcelFile("Product", 1, 0);
-		// click on Product module
+	@Test(priority = 1, groups = { "smoke",
+			"product" }, dataProvider = "productData", dataProviderClass = com.crm.vtiger.dataProvider.ProductDataProvider.class)
+	public void createProductTest(String ProductNameFromExcel) throws IOException, InterruptedException {
 		if (hp == null) {
 			throw new IllegalStateException("HomePage not initialized. Login might have failed.");
 		}
 		hp.navigateToProduct();
 
-		hp.navigateToProduct();
-		// click + for creating a product
 		pp = new ProductPage(driver);
-		pp.createProduct(product);
-		// enter the product name
-		createdAProductName = product + JavaUtility.getRandomNumber();
+
+		createdAProductName = ProductNameFromExcel + JavaUtility.getRandomNumber();
 		pp.createProduct(createdAProductName);
 		System.out.println("Title after product creation: " + driver.getTitle());
 		// Verifying created product
 		vp = new VerifyProductPage(driver);
 		String nameOfProduct = vp.getProductNameText();
-		boolean status = nameOfProduct.equals(createdAProductName);
-		Assert.assertTrue(status);
-		Reporter.log("successfully created a product ");
+		Assert.assertTrue(nameOfProduct.equals(createdAProductName));
+		Reporter.log("successfully created a product " + createdAProductName, true);
 
 	}
 	// Edit a product
