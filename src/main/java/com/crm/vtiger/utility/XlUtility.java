@@ -65,4 +65,33 @@ public class XlUtility {
 		return data;
 	}
 
+	// 🔹 New method to set cell data
+	public void setCellData(String sheetName, int rownum, int colnum, String data) throws IOException {
+		fi = new FileInputStream(path);
+		workbook = new XSSFWorkbook(fi);
+		sheet = workbook.getSheet(sheetName);
+
+		if (sheet == null) {
+			sheet = workbook.createSheet(sheetName); // create sheet if it doesn't exist
+		}
+
+		row = sheet.getRow(rownum);
+		if (row == null) {
+			row = sheet.createRow(rownum);
+		}
+
+		cell = row.getCell(colnum);
+		if (cell == null) {
+			cell = row.createCell(colnum);
+		}
+
+		cell.setCellValue(data);
+
+		fo = new FileOutputStream(path);
+		workbook.write(fo);
+		workbook.close();
+		fi.close();
+		fo.close();
+	}
+
 }

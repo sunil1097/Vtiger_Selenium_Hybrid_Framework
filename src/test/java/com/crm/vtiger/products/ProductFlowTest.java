@@ -15,17 +15,12 @@ import com.crm.vtiger.utility.JavaUtility;
 @Listeners(com.crm.vtiger.listeners.ExtentReportListener.class)
 public class ProductFlowTest extends BaseClass {
 	String createdAProductName;
-	String productName;
-	String updatedProductName;
 	ProductPage pp;
 	VerifyProductPage vp;
 
 	@Test(priority = 1, groups = { "smoke",
 			"product" }, dataProvider = "productData", dataProviderClass = com.crm.vtiger.dataProvider.ProductDataProvider.class)
 	public void createProductTest(String ProductNameFromExcel) throws IOException, InterruptedException {
-		if (hp == null) {
-			throw new IllegalStateException("HomePage not initialized. Login might have failed.");
-		}
 		hp.navigateToProduct();
 
 		pp = new ProductPage(driver);
@@ -37,6 +32,8 @@ public class ProductFlowTest extends BaseClass {
 		vp = new VerifyProductPage(driver);
 		String nameOfProduct = vp.getProductNameText();
 		Assert.assertTrue(nameOfProduct.equals(createdAProductName));
+		Assert.assertEquals(nameOfProduct, createdAProductName, "Product name mismatch!");
+
 		Reporter.log("successfully created a product " + createdAProductName, true);
 
 	}

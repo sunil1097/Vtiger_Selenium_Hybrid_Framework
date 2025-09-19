@@ -22,9 +22,9 @@ public class OpportunitiesPage {
 	private WebElement inputOpportunityName;
 
 	// action method
-	public void createOpportunities() {
+	public void createOpportunities(String OpportunityName) {
 		plusIcon.click();
-		inputOpportunityName.sendKeys(null);
+		inputOpportunityName.sendKeys(OpportunityName);
 
 	}
 
