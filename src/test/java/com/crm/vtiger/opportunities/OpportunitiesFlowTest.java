@@ -19,7 +19,7 @@ public class OpportunitiesFlowTest extends BaseClass {
 		hp.navigateToOpp();
 		op = new OpportunitiesPage(driver);
 		createdOppName = OppNameFromExcel + JavaUtility.getRandomNumber();
-		op.createOpportunities(createdOppName);
+		op.createOpportunities(createdOppName, OppNameFromExcel);
 
 		// get the org name for Opptest
 		String path = "C:\\Users\\dell\\eclipse-workspace\\Vtiger_Project\\src\\test\\resources\\TestScript.xlsx";
