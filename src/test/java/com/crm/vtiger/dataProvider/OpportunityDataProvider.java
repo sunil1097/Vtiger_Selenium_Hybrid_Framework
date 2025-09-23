@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 import com.crm.vtiger.utility.XlUtility;
 
 public class OpportunityDataProvider {
-	@DataProvider(name = "OppData")
+	@DataProvider(name = "oppData")
 	public String[][] getData() throws IOException {
 		String path = "C:\\Users\\dell\\eclipse-workspace\\Vtiger_Project\\src\\test\\resources\\TestScript.xlsx";
 		XlUtility xutil = new XlUtility(path);

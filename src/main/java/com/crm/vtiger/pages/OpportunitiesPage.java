@@ -41,9 +41,9 @@ public class OpportunitiesPage {
 	@FindBy(xpath = "//select[@name='search_field']")
 	private WebElement OrgDropDownInsidePopUp;
 
-	// search dynamic org name
-	@FindBy(xpath = "input[id='search_txt']")
-	private WebElement orgNameSearch;
+	// click on search result of Org pop
+	@FindBy(xpath = "//a[@id='1']")
+	private WebElement linkOrgSearch;
 	// click search button
 	@FindBy(xpath = "//input[@type='button']")
 	private WebElement searchBtn;
@@ -64,6 +64,7 @@ public class OpportunitiesPage {
 		orgSearchInput.sendKeys(OrgNameFromExcel);
 		wdutil.selectByValue(OrgDropDownInsidePopUp, "accountname");
 		searchBtn.click();
+		linkOrgSearch.click();
 		wdutil.switchToOriginalWindow(originalWindow);
 		saveBtn.click();
 

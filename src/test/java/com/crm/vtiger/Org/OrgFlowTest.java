@@ -30,7 +30,7 @@ public class OrgFlowTest extends BaseClass {
 
 		String path = "C:\\Users\\dell\\eclipse-workspace\\Vtiger_Project\\src\\test\\resources\\TestScript.xlsx";
 		XlUtility xutil = new XlUtility(path);
-		xutil.setCellData("orgData", 1, 0, createdOrgName);
+		xutil.setCellData("OrgData", 1, 0, createdOrgName);
 
 	}
 

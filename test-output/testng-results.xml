@@ -1,39 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[successfully created a product RAW_249]]>
-    </line>
-    <line>
-      <![CDATA[successfully edited ]]>
-    </line>
-    <line>
-      <![CDATA[successfully deleted a product]]>
-    </line>
   </reporter-output>
-  <suite started-at="2025-09-19T02:50:12 IST" name="Default suite" finished-at="2025-09-19T02:50:42 IST" duration-ms="30205">
+  <suite started-at="2025-09-24T01:40:41 IST" name="Default suite" finished-at="2025-09-24T01:41:01 IST" duration-ms="19412">
     <groups>
-      <group name="functional">
-        <method signature="ProductFlowTest.editExistingProductTest()[pri:2, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" name="editExistingProductTest" class="com.crm.vtiger.products.ProductFlowTest"/>
-      </group> <!-- functional -->
-      <group name="product">
-        <method signature="ProductFlowTest.createProductTest(java.lang.String)[pri:1, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" name="createProductTest" class="com.crm.vtiger.products.ProductFlowTest"/>
-        <method signature="ProductFlowTest.editExistingProductTest()[pri:2, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" name="editExistingProductTest" class="com.crm.vtiger.products.ProductFlowTest"/>
-        <method signature="ProductFlowTest.deleteExistingProductTest()[pri:3, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" name="deleteExistingProductTest" class="com.crm.vtiger.products.ProductFlowTest"/>
-      </group> <!-- product -->
-      <group name="regression">
-        <method signature="ProductFlowTest.deleteExistingProductTest()[pri:3, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" name="deleteExistingProductTest" class="com.crm.vtiger.products.ProductFlowTest"/>
-      </group> <!-- regression -->
       <group name="smoke">
-        <method signature="ProductFlowTest.createProductTest(java.lang.String)[pri:1, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" name="createProductTest" class="com.crm.vtiger.products.ProductFlowTest"/>
+        <method signature="OpportunitiesFlowTest.createOpportunityTest(java.lang.String)[pri:1, instance:com.crm.vtiger.opportunities.OpportunitiesFlowTest@3c41ed1d]" name="createOpportunityTest" class="com.crm.vtiger.opportunities.OpportunitiesFlowTest"/>
       </group> <!-- smoke -->
-      <group name="sanity">
-        <method signature="ProductFlowTest.editExistingProductTest()[pri:2, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" name="editExistingProductTest" class="com.crm.vtiger.products.ProductFlowTest"/>
-      </group> <!-- sanity -->
+      <group name="Opportunities">
+        <method signature="OpportunitiesFlowTest.createOpportunityTest(java.lang.String)[pri:1, instance:com.crm.vtiger.opportunities.OpportunitiesFlowTest@3c41ed1d]" name="createOpportunityTest" class="com.crm.vtiger.opportunities.OpportunitiesFlowTest"/>
+      </group> <!-- Opportunities -->
     </groups>
-    <test started-at="2025-09-19T02:50:12 IST" name="Default test" finished-at="2025-09-19T02:50:42 IST" duration-ms="30205">
-      <class name="com.crm.vtiger.products.ProductFlowTest">
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:12 IST" name="setUp" finished-at="2025-09-19T02:50:14 IST" duration-ms="1313" status="PASS">
+    <test started-at="2025-09-24T01:40:41 IST" name="Default test" finished-at="2025-09-24T01:41:01 IST" duration-ms="19412">
+      <class name="com.crm.vtiger.opportunities.OpportunitiesFlowTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:com.crm.vtiger.opportunities.OpportunitiesFlowTest@3c41ed1d]" started-at="2025-09-24T01:40:41 IST" name="setUp" finished-at="2025-09-24T01:40:43 IST" duration-ms="1452" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -49,63 +29,30 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:14 IST" name="login" finished-at="2025-09-19T02:50:16 IST" duration-ms="1512" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.crm.vtiger.opportunities.OpportunitiesFlowTest@3c41ed1d]" started-at="2025-09-24T01:40:43 IST" name="login" finished-at="2025-09-24T01:40:50 IST" duration-ms="6635" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createProductTest(java.lang.String)[pri:1, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:16 IST" name="createProductTest" data-provider="productData" finished-at="2025-09-19T02:50:27 IST" duration-ms="11025" status="PASS">
+        <test-method signature="createOpportunityTest(java.lang.String)[pri:1, instance:com.crm.vtiger.opportunities.OpportunitiesFlowTest@3c41ed1d]" started-at="2025-09-24T01:40:50 IST" name="createOpportunityTest" data-provider="oppData" finished-at="2025-09-24T01:40:59 IST" duration-ms="9240" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[RAW_]]>
+                <![CDATA[AsiaCup]]>
               </value>
             </param>
           </params>
           <reporter-output>
-            <line>
-              <![CDATA[successfully created a product RAW_249]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- createProductTest -->
-        <test-method is-config="true" signature="logOutFromVtiger()[pri:0, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:27 IST" name="logOutFromVtiger" finished-at="2025-09-19T02:50:28 IST" duration-ms="976" status="PASS">
+        </test-method> <!-- createOpportunityTest -->
+        <test-method is-config="true" signature="logOutFromVtiger()[pri:0, instance:com.crm.vtiger.opportunities.OpportunitiesFlowTest@3c41ed1d]" started-at="2025-09-24T01:40:59 IST" name="logOutFromVtiger" finished-at="2025-09-24T01:41:00 IST" duration-ms="1009" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logOutFromVtiger -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:28 IST" name="login" finished-at="2025-09-19T02:50:28 IST" duration-ms="384" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="editExistingProductTest()[pri:2, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:28 IST" name="editExistingProductTest" finished-at="2025-09-19T02:50:35 IST" depends-on-methods="com.crm.vtiger.products.ProductFlowTest.createProductTest" duration-ms="6332" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[successfully edited ]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- editExistingProductTest -->
-        <test-method is-config="true" signature="logOutFromVtiger()[pri:0, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:35 IST" name="logOutFromVtiger" finished-at="2025-09-19T02:50:36 IST" duration-ms="1021" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logOutFromVtiger -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:36 IST" name="login" finished-at="2025-09-19T02:50:36 IST" duration-ms="392" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="deleteExistingProductTest()[pri:3, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:36 IST" name="deleteExistingProductTest" finished-at="2025-09-19T02:50:40 IST" depends-on-methods="com.crm.vtiger.products.ProductFlowTest.editExistingProductTest" duration-ms="3591" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[successfully deleted a product]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- deleteExistingProductTest -->
-        <test-method is-config="true" signature="logOutFromVtiger()[pri:0, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:40 IST" name="logOutFromVtiger" finished-at="2025-09-19T02:50:42 IST" duration-ms="2522" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logOutFromVtiger -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.vtiger.products.ProductFlowTest@22ff4249]" started-at="2025-09-19T02:50:42 IST" name="tearDown" finished-at="2025-09-19T02:50:42 IST" duration-ms="202" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.vtiger.opportunities.OpportunitiesFlowTest@3c41ed1d]" started-at="2025-09-24T01:41:00 IST" name="tearDown" finished-at="2025-09-24T01:41:01 IST" duration-ms="336" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.crm.vtiger.products.ProductFlowTest -->
+      </class> <!-- com.crm.vtiger.opportunities.OpportunitiesFlowTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

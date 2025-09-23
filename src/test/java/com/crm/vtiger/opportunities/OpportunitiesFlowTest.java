@@ -19,7 +19,6 @@ public class OpportunitiesFlowTest extends BaseClass {
 		hp.navigateToOpp();
 		op = new OpportunitiesPage(driver);
 		createdOppName = OppNameFromExcel + JavaUtility.getRandomNumber();
-		op.createOpportunities(createdOppName, OppNameFromExcel);
 
 		// get the org name for Opptest
 		String path = "C:\\Users\\dell\\eclipse-workspace\\Vtiger_Project\\src\\test\\resources\\TestScript.xlsx";
@@ -29,6 +28,9 @@ public class OpportunitiesFlowTest extends BaseClass {
 
 		// 3️⃣ Now fetch organisation name
 		String orgName = xutil.getCellData("OrgData", 1, 0);
+		op.createOpportunities(createdOppName, orgName);
+
+		System.out.println("Org name fetched from Excel: " + orgName);
 
 	}
 
