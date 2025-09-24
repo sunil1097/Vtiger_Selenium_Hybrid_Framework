@@ -1,5 +1,6 @@
 package com.crm.vtiger.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,6 +17,8 @@ public class OpportunitiesPage {
 		wdutil = new WebDriverUtility(driver);
 		PageFactory.initElements(driver, this);
 	}
+
+	// For Create
 
 	// click on + icon
 	@FindBy(xpath = "//img[@title='Create Opportunity...']")
@@ -41,18 +44,20 @@ public class OpportunitiesPage {
 	@FindBy(xpath = "//select[@name='search_field']")
 	private WebElement OrgDropDownInsidePopUp;
 
-	// click on search result of Org pop
-	@FindBy(xpath = "//a[@id='1']")
-	private WebElement linkOrgSearch;
 	// click search button
-	@FindBy(xpath = "//input[@type='button']")
+	@FindBy(xpath = "//input[@name='search']")
 	private WebElement searchBtn;
 
 	// click on save button
 	@FindBy(xpath = "//input[@title='Save [Alt+S]']")
 	private WebElement saveBtn;
 
-	// action method
+	// For Edit
+
+	@FindBy(xpath = "//input[@name='search_text']")
+	private WebElement searchOppName;
+
+	// action method for create Opportunity
 	public void createOpportunities(String OpportunityName, String OrgNameFromExcel) {
 		plusIcon.click();
 		inputOpportunityName.sendKeys(OpportunityName);
@@ -64,9 +69,22 @@ public class OpportunitiesPage {
 		orgSearchInput.sendKeys(OrgNameFromExcel);
 		wdutil.selectByValue(OrgDropDownInsidePopUp, "accountname");
 		searchBtn.click();
+		// dynamic selection of org
+		WebElement linkOrgSearch = driver.findElement(By.xpath("//a[text()='" + OrgNameFromExcel + "']"));
 		linkOrgSearch.click();
+
 		wdutil.switchToOriginalWindow(originalWindow);
 		saveBtn.click();
+	}
+
+	// Action Method For Editing Opportunity
+	public void editOpportunities() {
+		searchOppName.sendKeys(null);
+
+	}
+
+	// Action Method For deleteOpportunity
+	public void deleteOpportunity() {
 
 	}
 
