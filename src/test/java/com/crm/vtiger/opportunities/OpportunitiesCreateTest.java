@@ -3,6 +3,7 @@ package com.crm.vtiger.opportunities;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import com.crm.vtiger.pages.OpportunitiesPage;
@@ -33,21 +34,21 @@ public class OpportunitiesCreateTest extends BaseClass {
 		String orgName = xutil.getCellData("OrgData", 1, 0);
 		op.createOpportunities(createdOppName, orgName);
 
-		OpportunityDetailsPage opd = new OpportunityDetailsPage(driver);
+		opd = new OpportunityDetailsPage(driver);
 
 		// Assertions
-		Assert.assertEquals(opd.getOpportunityName(), createdOppName);
-		Assert.assertEquals(opd.getOrgName(), orgName);
+		Assert.assertEquals(opd.getOpportunityName(), createdOppName, "OPPORTUNITY NAME IS MISMTACHED");
+		Assert.assertEquals(opd.getOrgName().trim(), orgName.trim(), "ORG NAME IS MISMATCHED");
 
 		System.out.println("Org name fetched from Excel: " + orgName);
 
 	}
 
-	// @AfterMethod
+	@AfterMethod
 	public void cleanUP() {
 		if (createdOppName != null) {
-			opd.getOpportunityName();
 			opd.clickDelete();
+
 		}
 
 	}

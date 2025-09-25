@@ -25,6 +25,18 @@ public class OpportunityDetailsPage {
 	@FindBy(xpath = "//input[@type='button' and @name='Edit']")
 	private WebElement editBtn;
 
+	// edit the OppName
+	@FindBy(xpath = "//input[@name='potentialname']")
+	private WebElement textOppName;
+	// edit the description
+	@FindBy(xpath = "//textarea[@name='description']")
+	private WebElement textAreaField;
+
+	// save button after editing
+
+	@FindBy(xpath = "(//input[@title='Save [Alt+S]'])[1]")
+	private WebElement saveBtn;
+
 	// click to delete
 	@FindBy(xpath = "(//input[@value='Delete'])[1]")
 	private WebElement deleteBtn;
@@ -34,15 +46,26 @@ public class OpportunityDetailsPage {
 	}
 
 	public String getOrgName() {
-		return oppNameText.getText();
+		return orgNameText.getText();
 	}
 
 	public void clickEdit() {
 		editBtn.click();
+
+	}
+
+	public void editTheOppName(String newName) {
+		textOppName.clear();
+		textOppName.sendKeys(newName);
+	}
+
+	public void saveChanges() {
+		saveBtn.click();
 	}
 
 	public void clickDelete() {
 		deleteBtn.click();
+		driver.switchTo().alert().accept();
 	}
 
 }

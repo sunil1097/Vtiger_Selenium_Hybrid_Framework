@@ -52,10 +52,16 @@ public class OpportunitiesPage {
 	@FindBy(xpath = "//input[@title='Save [Alt+S]']")
 	private WebElement saveBtn;
 
-	// For Edit
+	// searching Opportunity Name For Deleting
 
 	@FindBy(xpath = "//input[@name='search_text']")
 	private WebElement searchOppName;
+
+	@FindBy(xpath = "//select[@name='search_field']")
+	private WebElement oppDropDownName;
+
+	@FindBy(xpath = "//input[@name='submit']")
+	private WebElement searchBtnOppName;
 
 	// action method for create Opportunity
 	public void createOpportunities(String OpportunityName, String OrgNameFromExcel) {
@@ -78,14 +84,36 @@ public class OpportunitiesPage {
 	}
 
 	// Action Method For Editing Opportunity
+	// will use later for end to end flow
 	public void editOpportunities() {
-		searchOppName.sendKeys(null);
 
 	}
 
 	// Action Method For deleteOpportunity
+	// will use later for end to end flow
 	public void deleteOpportunity() {
 
+	}
+
+	// Action method to search by opportunity name
+	public void searchOpportunityByName(String oppName) {
+		searchOppName.clear();
+		searchOppName.sendKeys(oppName);
+		wdutil.selectByValue(oppDropDownName, "potentialname"); // "potentialname" = Opportunity Name
+		searchBtnOppName.click();
+	}
+	// verification method
+
+	public boolean isOpportunityPresent(String oppName) {
+		searchOpportunityByName(oppName);
+
+		try {
+			driver.findElement(By.xpath("//a[text()='" + oppName + "']"));
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			return false;
+		}
 	}
 
 }

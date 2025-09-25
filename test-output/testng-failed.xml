@@ -3,15 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.vtiger.opportunities.OpportunitiesCreateTest">
+      <class name="com.crm.vtiger.opportunities.OpportunitiesEditTest">
         <methods>
           <include name="login"/>
-          <include name="createOpportunityTest" invocation-numbers="0"/>
+          <include name="editOpportunityTest"/>
+          <include name="cleanUp"/>
           <include name="tearDown"/>
           <include name="logOutFromVtiger"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.crm.vtiger.opportunities.OpportunitiesCreateTest -->
+      </class> <!-- com.crm.vtiger.opportunities.OpportunitiesEditTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
