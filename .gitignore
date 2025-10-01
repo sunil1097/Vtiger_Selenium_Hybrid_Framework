@@ -1,1 +1,25 @@
+# Maven build output
 /target/
+
+# TestNG & surefire reports
+/test-output/
+/surefire-reports/
+
+# Logs
+*.log
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE specific
+# IntelliJ
+.idea/
+*.iml
+# Eclipse
+.settings/
+.project
+.classpath
+
+# Other temp files
+*.swp
